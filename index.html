@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biodata Tiara Amelia Cahya</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f2f2f2;
+}
+
+/* NAVBAR */
+.navbar{
+    background:linear-gradient(45deg,#424242,#9e9e9e);
+}
+.navbar-brand,.nav-link{
+    color:white !important;
+    font-weight:600;
+}
+
+/* CARD */
+.card{
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+
+/* FOTO PROFIL */
+.profile-img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #757575;
+    margin-top:-80px;
+    cursor:pointer;
+    transition:.3s;
+}
+.profile-img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #9e9e9e;
+}
+
+/* BUTTON */
+.btn-custom{
+    background:linear-gradient(45deg,#616161,#bdbdbd);
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:10px 25px;
+}
+.btn-custom:hover{
+    transform:scale(1.1);
+}
+
+/* SLIDE */
+.carousel img{
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">🤍 Tiara</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- BIODATA -->
+<section id="about" class="py-5 mt-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-8">
+
+<div class="card text-center p-4">
+<img src="tiara.jpg" id="profileImage" class="profile-img">
+<input type="file" id="uploadFoto" accept="image/*" hidden>
+
+<h3 class="mt-4">Tiara Amelia Cahya</h3>
+<p class="text-muted">Pelajar • TKJ</p>
+<hr>
+
+<div class="text-left">
+<p><strong>Nama Lengkap:</strong> Tiara Amelia Cahya</p>
+<p><strong>Tempat, Tgl Lahir:</strong> Tasikmalaya, 01 Juni 2009</p>
+<p><strong>Jenis Kelamin:</strong> Perempuan</p>
+<p><strong>Alamat:</strong> BSD</p>
+<p><strong>
+
+:</strong> SMK HS Agung</p>
+<p><strong>Jurusan:</strong> Teknik Komputer dan Jaringan</p>
+<p><strong>Kelas:</strong> X TKJ A</p>
+<p><strong>Hobi:</strong> Traveling</p>
+<p><strong>Keahlian:</strong> Mendengarkan</p>
+<p><strong>Cita-cita:</strong> Paskibraka</p>
+<p><strong>Motto:</strong> Jangan pernah menyerah</p>
+</div>
+
+<a href="#" target="_blank" class="btn btn-custom mt-3">
+<i class="bi bi-instagram">https://www.instagram.com/callmetiara_1?igsh=MWdmYzdvOXV3Y3dvdQ==</i> Follow Instagram
+</a>
+</div>
+
+<!-- GALERI -->
+<div id="gallery" class="card mt-4 p-3">
+<h5 class="text-center mb-3">Galeri Foto</h5>
+
+<div id="photoSlide" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#photoSlide" data-slide-to="0" class="active"></li>
+<li data-target="#photoSlide" data-slide-to="1"></li>
+<li data-target="#photoSlide" data-slide-to="2"></li>
+</ol>
+
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="slide1.jpg" class="d-block w-100">
+</div>
+<div class="carousel-item">
+<img src="slide2.jpg" class="d-block w-100">
+</div>
+<div class="carousel-item">
+<img src="slide3.jpg" class="d-block w-100">
+</div>
+</div>
+
+<a class="carousel-control-prev" href="#photoSlide" data-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#photoSlide" data-slide="next">
+<span class="carousel-control-next-icon"></span>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="text-center py-4" style="background:#424242;color:white">
+© 2026 Tiara Amelia Cahya • Tema Abu-abu 🤍
+</footer>
+
+<script>
+const profileImage=document.getElementById("profileImage");
+const uploadFoto=document.getElementById("uploadFoto");
+profileImage.onclick=()=>uploadFoto.click();
+uploadFoto.onchange=()=>{
+ const file=uploadFoto.files[0];
+ if(file){
+  const reader=new FileReader();
+  reader.onload=e=>profileImage.src=e.target.result;
+  reader.readAsDataURL(file);
+ }
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
